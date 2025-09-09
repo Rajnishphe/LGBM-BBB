@@ -9,17 +9,17 @@ python-dotenv>=1.0.0
 pandas>=2.1.0,<3.0.0
 numpy>=1.24.0,<2.0.0
 
-# Machine learning - match the version used for training
-scikit-learn==1.0.2
+# Machine learning - compatible version for Python 3.11
+scikit-learn>=1.3.0,<1.5.0
 lightgbm>=4.0.0,<5.0.0
 joblib>=1.3.0
 
 # Chemistry libraries
 rdkit>=2023.9.1
 
-# Mordred dependencies - install these first
-networkx==2.8.8
-six==1.17.0
+# Mordred dependencies - updated versions
+networkx>=2.8.8,<3.0.0
+six>=1.16.0
 
 # Install mordred from source (more reliable on Render)
 git+https://github.com/mordred-descriptor/mordred.git
