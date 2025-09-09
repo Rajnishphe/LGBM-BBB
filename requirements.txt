@@ -25,3 +25,5 @@ six>=1.16.0
 
 # Mordred
 mordred==1.2.0
+python-3.10.13
+
