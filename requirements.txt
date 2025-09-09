@@ -16,4 +16,4 @@ joblib>=1.3.0
 
 # Chemistry libraries (Python 3.13 compatible alternatives)
 rdkit>=2023.9.1  # Main rdkit package instead of rdkit-pypi
-mordred>=1.2.0
+mordred==1.2.0
