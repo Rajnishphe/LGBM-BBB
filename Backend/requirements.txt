@@ -1,0 +1,17 @@
+# Web API
+fastapi>=0.115.0,<1.0.0
+uvicorn[standard]>=0.32.0,<1.0.0
+python-multipart>=0.0.9,<1.0.0
+
+# Model serialization and the exact scientific stack used by the bundle
+numpy==1.23.5
+pandas==1.5.3
+scikit-learn==1.0.2
+lightgbm==4.5.0
+joblib==1.4.2
+scipy==1.15.3
+dcor>=0.6,<0.8
+
+# Chemistry and Mordred descriptors
+rdkit==2024.3.5
+mordred==1.2.0
