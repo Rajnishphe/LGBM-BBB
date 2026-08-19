@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 
 const API_BASE_URL = (import.meta.env.VITE_BBB_API_URL || "https://lgbm-bbb-backend.onrender.com").replace(/\/+$/, '');
 const confidenceScore = (label) => {
@@ -74,10 +73,6 @@ const normalizeBatchResponse = (raw = {}) => ({
     : [],
   summary: raw.summary ?? {},
 });
-=======
-// API client for BBB permeability prediction service
-const API_BASE_URL = 'https://lgbm-bbb-backend.onrender.com';
->>>>>>> 65faad4285a7f91dd166127ff3c126d1bc2178b0
 
 class BBBApiClient {
   constructor() {
@@ -130,14 +125,10 @@ class BBBApiClient {
       }
       
       if (!response.ok) {
-<<<<<<< HEAD
         const errorMessage =
           (isJson && (data?.message || data?.detail)) ||
           data ||
           `HTTP error! status: ${response.status}`;
-=======
-        const errorMessage = (isJson && data?.message) || data || `HTTP error! status: ${response.status}`;
->>>>>>> 65faad4285a7f91dd166127ff3c126d1bc2178b0
         throw new Error(errorMessage);
       }
       
@@ -156,11 +147,7 @@ class BBBApiClient {
 
   // Single molecule prediction
   async predictSingle(smiles, name = '', threshold = 0.5228) {
-<<<<<<< HEAD
     const result = await this.request('/predict/single', {
-=======
-    return this.request('/predict/single', {
->>>>>>> 65faad4285a7f91dd166127ff3c126d1bc2178b0
       method: 'POST',
       body: JSON.stringify({
         smiles,
@@ -168,29 +155,19 @@ class BBBApiClient {
         threshold,
       }),
     });
-<<<<<<< HEAD
     return normalizePrediction(result);
-=======
->>>>>>> 65faad4285a7f91dd166127ff3c126d1bc2178b0
   }
 
   // Batch prediction
   async predictBatch(molecules, threshold = 0.5228) {
-<<<<<<< HEAD
     const result = await this.request('/predict/batch', {
-=======
-    return this.request('/predict/batch', {
->>>>>>> 65faad4285a7f91dd166127ff3c126d1bc2178b0
       method: 'POST',
       body: JSON.stringify({
         molecules,
         threshold,
       }),
     });
-<<<<<<< HEAD
     return normalizeBatchResponse(result);
-=======
->>>>>>> 65faad4285a7f91dd166127ff3c126d1bc2178b0
   }
 
   // File upload prediction
@@ -199,22 +176,15 @@ class BBBApiClient {
     if (smilesColumn) endpoint += `&smiles_column=${encodeURIComponent(smilesColumn)}`;
     if (nameColumn) endpoint += `&name_column=${encodeURIComponent(nameColumn)}`;
 
-<<<<<<< HEAD
     const result = await this.request(endpoint, {
-=======
-    return this.request(endpoint, {
->>>>>>> 65faad4285a7f91dd166127ff3c126d1bc2178b0
       method: 'POST',
       headers: {
         'Content-Type': null, // This signals to not set Content-Type, let browser handle it for FormData
       },
       body: formData,
     });
-<<<<<<< HEAD
     // FileUpload.jsx already consumes the historical { data: ... } envelope.
     return { data: normalizeBatchResponse(result) };
-=======
->>>>>>> 65faad4285a7f91dd166127ff3c126d1bc2178b0
   }
 
   // Model information

@@ -29,15 +29,12 @@ export default defineConfig({
     emptyOutDir: true,
   },
   server: {
-<<<<<<< HEAD
     proxy: {
       "/api": {
         target: process.env.BBB_API_URL || "http://localhost:8000",
         changeOrigin: true,
       },
     },
-=======
->>>>>>> 65faad4285a7f91dd166127ff3c126d1bc2178b0
     fs: {
       strict: true,
       deny: ["**/.*"],
