@@ -387,7 +387,10 @@ export function FileUpload() {
                       <th className="text-left p-2">SMILES</th>
                       <th className="text-left p-2">Prediction</th>
                       <th className="text-left p-2">Confidence</th>
+<<<<<<< HEAD
                       <th className="text-left p-2">Processing</th>
+=======
+>>>>>>> 65faad4285a7f91dd166127ff3c126d1bc2178b0
                       <th className="text-left p-2">Status</th>
                     </tr>
                   </thead>
@@ -415,12 +418,15 @@ export function FileUpload() {
                             </div>
                           )}
                         </td>
+<<<<<<< HEAD
                         <td className="p-2 text-xs">
                           <div>{result?.curation_status || "N/A"}</div>
                           <div className="text-muted-foreground">
                             3D: {result?.generation_status || "N/A"}
                           </div>
                         </td>
+=======
+>>>>>>> 65faad4285a7f91dd166127ff3c126d1bc2178b0
                         <td className="p-2">
                           {result?.success ? (
                             <Badge variant="outline" className="text-xs text-green-600">Success</Badge>

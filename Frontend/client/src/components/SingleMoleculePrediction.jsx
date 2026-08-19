@@ -348,8 +348,12 @@ export function SingleMoleculePrediction() {
                 <Label>Confidence Level</Label>
                 <div className="flex items-center gap-2">
                   <Badge variant="outline" data-testid="badge-confidence">
+<<<<<<< HEAD
                     {prediction?.confidence_label ||
                       getConfidenceLevel(prediction?.confidence || 0).level}
+=======
+                    {getConfidenceLevel(prediction?.confidence || 0).level}
+>>>>>>> 65faad4285a7f91dd166127ff3c126d1bc2178b0
                   </Badge>
                   <span className="text-sm text-muted-foreground">
                     {((prediction?.confidence || 0) * 100).toFixed(1)}%
@@ -390,6 +394,7 @@ export function SingleMoleculePrediction() {
               </p>
             </div>
 
+<<<<<<< HEAD
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
               <div className="rounded-lg border bg-muted/50 p-4 space-y-1">
                 <Label>Curation Status</Label>
@@ -405,6 +410,8 @@ export function SingleMoleculePrediction() {
               </div>
             </div>
 
+=======
+>>>>>>> 65faad4285a7f91dd166127ff3c126d1bc2178b0
             <div className="bg-muted p-4 rounded-lg space-y-2">
               <h4 className="font-medium">Molecular Information</h4>
               <div className="space-y-1 text-sm">
