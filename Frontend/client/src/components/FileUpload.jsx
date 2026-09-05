@@ -387,6 +387,7 @@ export function FileUpload() {
                       <th className="text-left p-2">SMILES</th>
                       <th className="text-left p-2">Prediction</th>
                       <th className="text-left p-2">Confidence</th>
+                      <th className="text-left p-2">Processing</th>
                       <th className="text-left p-2">Status</th>
                     </tr>
                   </thead>
@@ -413,6 +414,12 @@ export function FileUpload() {
                               {(result.confidence * 100).toFixed(1)}%
                             </div>
                           )}
+                        </td>
+                        <td className="p-2 text-xs">
+                          <div>{result?.curation_status || "N/A"}</div>
+                          <div className="text-muted-foreground">
+                            3D: {result?.generation_status || "N/A"}
+                          </div>
                         </td>
                         <td className="p-2">
                           {result?.success ? (

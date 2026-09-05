@@ -348,7 +348,8 @@ export function SingleMoleculePrediction() {
                 <Label>Confidence Level</Label>
                 <div className="flex items-center gap-2">
                   <Badge variant="outline" data-testid="badge-confidence">
-                    {getConfidenceLevel(prediction?.confidence || 0).level}
+                    {prediction?.confidence_label ||
+                      getConfidenceLevel(prediction?.confidence || 0).level}
                   </Badge>
                   <span className="text-sm text-muted-foreground">
                     {((prediction?.confidence || 0) * 100).toFixed(1)}%
@@ -387,6 +388,21 @@ export function SingleMoleculePrediction() {
               <p className="text-sm text-muted-foreground leading-relaxed" data-testid="text-interpretation">
                 {prediction?.interpretation || 'No interpretation available'}
               </p>
+            </div>
+
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+              <div className="rounded-lg border bg-muted/50 p-4 space-y-1">
+                <Label>Curation Status</Label>
+                <div className="font-mono text-sm" data-testid="text-curation-status">
+                  {prediction?.curation_status || 'N/A'}
+                </div>
+              </div>
+              <div className="rounded-lg border bg-muted/50 p-4 space-y-1">
+                <Label>3D Generation Status</Label>
+                <div className="font-mono text-sm" data-testid="text-3d-generation-status">
+                  {prediction?.generation_status || 'N/A'}
+                </div>
+              </div>
             </div>
 
             <div className="bg-muted p-4 rounded-lg space-y-2">
